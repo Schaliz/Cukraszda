@@ -42,3 +42,21 @@ def saveresultToFile(suti, ar):
     file = open(filename, 'a', encoding='utf-8')
     file.write(f'{suti};{ar}\n')
     file.close()
+
+def deletcookies():
+    system('cls')
+    print('Eredmény törlése')
+    suti = input('A törlendő süti: ')
+    if suti in sutik:
+        sutik.pop(suti)
+        saveAllToFile()
+        input('Süti törölve. Tovább (Enter)...')
+    else:
+        input('Nincs ilyen süti')
+
+def saveAllToFile():
+    file = open(filename, 'w', encoding='utf-8')
+    file.write(cimsor)
+    for suti,ar in sutik.items():
+        file.write(f'{suti};{ar}\n')
+    file.close()

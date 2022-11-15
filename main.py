@@ -8,3 +8,5 @@ while choice != '0':
         kaphatoSutik()
     elif choice == '2':
         ujSuti()
+    elif choice == '4':
+        deletcookies()
