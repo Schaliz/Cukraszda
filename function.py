@@ -2,14 +2,16 @@ from data import *
 from os import system
 filename = 'arak.csv'
 cimsor = ''
+rendeles = 'rendeles.csv'
 
 def menu():
     system('cls')
     print('0 - Kilép')
     print('1 - Jelenleg kapható sütemények')
     print('2 - Új sütemény')
-    print('3 - Rendelések')
-    print('4 - Törlés')
+    print('3 - Legdrágább süti')
+    print('4 - Legolcsóbb süti')
+    print('5 - Törlés')
     return input('Választás: ')
 
 def loadCookies():
@@ -60,3 +62,21 @@ def saveAllToFile():
     for suti,ar in sutik.items():
         file.write(f'{suti};{ar}\n')
     file.close()
+
+def legdragabb():
+    maxkey = ''
+    maxvalue = 0
+    for key,value in sutik.items():
+        if value > maxvalue:
+            maxvalue = value
+            maxkey = key
+    return maxkey
+
+def legolcsobb():
+    minkey = ''
+    minvalue = 9999999999999999
+    for key,value in sutik.items():
+        if value < minvalue:
+            minvalue = value
+            minkey = key
+    return minkey
