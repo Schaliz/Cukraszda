@@ -2,16 +2,21 @@ from data import *
 from os import system
 filename = 'arak.csv'
 cimsor = ''
-rendeles = 'rendeles.csv'
+
 
 def menu():
-    system('cls')
+    
     print('0 - Kilép')
-    print('1 - Jelenleg kapható sütemények')
+    print('1 - Sütik')
     print('2 - Új sütemény')
-    print('3 - Legdrágább süti')
-    print('4 - Legolcsóbb süti')
-    print('5 - Törlés')
+    print('3 - Törlés')
+    return input('Választás: ')
+
+def menu1():
+    print('0 - Vissza a menübe')
+    print('1 - Jelenleg kapható sütemények')
+    print('2 - Legdrágább süti')
+    print('3 - Legolcsóbb süti')
     return input('Választás: ')
 
 def loadCookies():
@@ -24,17 +29,15 @@ def loadCookies():
     file.close()
 
 def kaphatoSutik():
-    system('cls')
     print('Kapható sütemények')
     for suti, ar in sutik.items():
         print(f'{suti} - {ar} Ft.')
     input('Tovább (Enter)...')
 
 def ujSuti():
-    system('cls')
     print('Új sütemény felvétele')
     suti = input('Süti: ')
-    ar = float(input('Ára: '))
+    ar = (input('Ára: '))
     sutik[suti] = ar
     saveresultToFile(suti, ar)
     print('Sikeres felvétel.')
@@ -46,7 +49,6 @@ def saveresultToFile(suti, ar):
     file.close()
 
 def deletcookies():
-    system('cls')
     print('Eredmény törlése')
     suti = input('A törlendő süti: ')
     if suti in sutik:
