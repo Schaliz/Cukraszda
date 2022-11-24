@@ -17,7 +17,15 @@ while choice != '0':
             elif choice1 == '3':
                 print('A legolcsóbb süti neve: ',legolcsobb())
                 input('Tovább (Enter)')
+            elif choice1 == '4':
+                suti = input('Sütemény neve: ')
+                index = search(suti)
+                if index == False:
+                    print('Nincs ilyen sütemény')
+                else:
+                    print(f'A süti ára: {sutik[index]}')
     elif choice == '2':
         ujSuti()
     elif choice == '3':
         deletcookies()
+

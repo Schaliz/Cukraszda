@@ -1,11 +1,10 @@
 # Cukraszda
 Egy cukrászat süteményeit tartalmazza. 
 
-Az 1-es a jelenleg kapható sütiket tartalmazza.
+Az 1-es átvisz minket egy másik menübe, ahol az 1-es kilistázza a kapható sütiket.A 2-es a legdrágább sütit mutatja, míg a 3-mas a legolcsóbb sütit.
 A 2-es egy új sütit ad hozzá, amit lehet kapni.
-A 3-mas legrádább sütit mutatja meg.
-A 4-es legolcsóbb sütit mutatja meg.
-A 5-ös egy általunk választott eddig kapható sütit törölhetünk.
+A 3-mas Törölni lehet egy tetszés szerinti sütit.
+
 
 Fájlok: 
 main.py meghívott függvények
